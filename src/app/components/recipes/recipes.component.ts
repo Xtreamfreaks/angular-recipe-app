@@ -7,13 +7,20 @@ import { Recipe } from './recipe.model';
   templateUrl: './recipes.component.html',
   styleUrls: ['./recipes.component.scss']
 })
-export class RecipesComponent implements OnInit {   
+export class RecipesComponent implements OnInit {  
+  selectedRecipe: Recipe; 
 
 
   constructor() { }
 
   ngOnInit(): void {
   }
+
+  clickedRecipe(recipe: Recipe) {
+    this.selectedRecipe = recipe;
+  }
+
+
 
   
 

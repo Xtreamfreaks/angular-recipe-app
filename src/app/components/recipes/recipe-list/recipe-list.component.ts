@@ -8,6 +8,7 @@ import { Recipe } from '../recipe.model';
   styleUrls: ['./recipe-list.component.scss']
 })
 export class RecipeListComponent implements OnInit {
+  @Output() wasClickedRecipe = new EventEmitter<Recipe>();
   
 
   recipes: Recipe[] =[
@@ -18,6 +19,11 @@ export class RecipeListComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  selectedRecipe(recipe: Recipe) {
+    this.wasClickedRecipe.emit(recipe);
+
   }
 
  
